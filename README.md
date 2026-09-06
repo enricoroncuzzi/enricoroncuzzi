@@ -1,39 +1,25 @@
-# 💻 Tech Stack:
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white) ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![MLflow](https://img.shields.io/badge/MLflow-%230194E2.svg?style=for-the-badge&logo=mlflow&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+# Enrico Roncuzzi
 
----
+AI/ML Engineer · MSc Computer Science @ Politecnico di Milano
 
-## AI / LLM Engineering
+I build production LLM and ML systems: pipelines that keep a model's output structured, grounded, and honest instead of trusting it to behave.
 
-### **[jd-scraper — AI job-hunt pipeline](https://github.com/enricoroncuzzi/jd-scraper)**
-   - **Personal Project**
-   - **Description**: An end-to-end system that scrapes EU-remote AI/ML jobs daily, scores each one with an LLM for fit, and turns any high-fit posting into a tailored one-page CV + cover letter + recruiter message — grounded (no hallucination), one click from the daily digest. Runs unattended on a VPS with a 4,000+ offer PostgreSQL corpus.
-   - **Technologies Used**: Python, Google Gemini & Cerebras LLM APIs, LangChain, Pydantic, PostgreSQL (Neon), Playwright (headless Chromium), pytest (TDD), VPS + cron
-   - **Link**: [jd-scraper](https://github.com/enricoroncuzzi/jd-scraper)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/enricoroncuzzi/)
 
----
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white) ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![MLflow](https://img.shields.io/badge/MLflow-%230194E2.svg?style=for-the-badge&logo=mlflow&logoColor=white)
 
-## Machine Learning & Deep Learning
+### [Unmasking Synthetic Images](https://github.com/enricoroncuzzi/unmasking-synthetic-images)
 
-### **[Unmasking Synthetic Images — MoE Detection & Attribution](https://github.com/enricoroncuzzi/unmasking-synthetic-images)**
-   - **Master's thesis**
-   - **Description**: A Mixture-of-Experts framework for synthetic-image detection **and** source attribution. Five specialized ResNet50 detectors + a gating network recover 45 percentage points of cross-distribution accuracy (50% → **94.1% balanced accuracy**); a 1K-parameter gate matches a 10.5M-parameter one on detection while uniquely solving attribution. Includes a self-built, published 6,000-image forensic dataset (5 SD variants, SD1.5 → FLUX) where the synthetic fingerprint lives sub-pixel via a VAE roundtrip. Full production stack shipped end to end.
-   - **Technologies Used**: PyTorch, PyTorch Lightning, MLflow, Mixture of Experts, ResNet50, Hugging Face (Hub + Spaces), FastAPI, Docker, GitHub Actions, Gradio
-   - **Live demo**: [🤗 Hugging Face Space](https://huggingface.co/spaces/enricoroncuzzi/unmasking-synthetic-images-demo)
-   - **Link**: [unmasking-synthetic-images](https://github.com/enricoroncuzzi/unmasking-synthetic-images)
+A detector that tells you an image is synthetic is only half the answer: the useful question is which generator made it, and most detection work doesn't touch that at all. My thesis builds a Mixture-of-Experts framework that does both: five specialized ResNet50 detectors feed a gating network, recovering 45 percentage points of cross-distribution accuracy (50% baseline to 94.1% balanced accuracy), with a 1K-parameter gate matching a 10.5M-parameter one on detection while uniquely solving attribution. The synthetic fingerprint it exploits lives sub-pixel, introduced by the VAE roundtrip every diffusion model performs, which is why it survives across generators. Backing it is a self-built, published 6,000-image forensic dataset spanning five Stable Diffusion variants from SD1.5 to FLUX. Shipped as a full stack: PyTorch Lightning, MLflow-tracked, served through FastAPI and Docker.
 
----
+Try it: [Hugging Face Space demo](https://huggingface.co/spaces/enricoroncuzzi/unmasking-synthetic-images-demo)
 
-## Audio & Creative Computing
+### [jd-scraper](https://github.com/enricoroncuzzi/jd-scraper)
 
-### **[The FlanGELVS](https://github.com/enricoroncuzzi/The-FlanGELVS)**
-   - **University Project**: Computer Music Languages and Systems @ Politecnico di Milano
-   - **Description**: A flanger audio-effect plugin built with the JUCE framework.
-   - **Technologies Used**: C++, JUCE, real-time DSP
-   - **Link**: [The-FlanGELVS](https://github.com/enricoroncuzzi/The-FlanGELVS)
+The hard part of using an LLM in a pipeline isn't getting it to respond: it's getting it to stop making things up. jd-scraper scrapes AI/ML postings daily across four region-scoped tiers (Italy full-remote, Switzerland and San Marino at any work mode, EU/EEA full-remote, and UK full-remote), runs each one through an LLM remote-eligibility verification stage on Groq before it ever reaches scoring, then scores fit with a second LLM on OpenRouter and stores the result in a growing Postgres corpus. Every LLM touchpoint in the pipeline (verification, scoring, CV tailoring) returns structured Pydantic output rather than parsed free text.
 
-### **[CPAC22-Project](https://github.com/enricoroncuzzi/CPAC22-Project)**
-   - **University Project**: Creative Programming and Computing @ Politecnico di Milano
-   - **Description**: A project for the Creative Programming and Computing course.
-   - **Technologies Used**: Python
-   - **Link**: [CPAC22-Project](https://github.com/enricoroncuzzi/CPAC22-Project)
+The part I'd actually defend in an interview: the CV and cover letter it tailors per posting never let the model invent content. It selects and reorders verbatim bullets from a canonical CV, and a runtime validation gate byte-checks the result against required claims before anything reaches a PDF. Hallucination is closed off in code, not hoped away by prompt wording.
+
+### Also
+
+[The FlanGELVS](https://github.com/enricoroncuzzi/The-FlanGELVS) (JUCE flanger plugin, real-time DSP in C++) and [CPAC22-Project](https://github.com/enricoroncuzzi/CPAC22-Project).
